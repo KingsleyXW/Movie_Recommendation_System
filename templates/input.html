@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>user interface</title>
+  <style>
+    li {
+      font-size: large;
+      font-family: 'serif';
+    }
+  </style>
+</head>
+<body>
+  <h2>Please input movie release year, rating threshold, and run time threshold</h2>
+
+  <form action="/input/" method="POST">
+    <label for="fname">release year, recommended range: 2000~2020:</label><br>
+    <input type="text" id="fname" name="fname" value=2005><br>
+    <label for="lname">rating threshold, recommended range: 0~10:</label><br>
+    <input type="text" id="lname" name="lname" value=7><br><br>
+    <label for="lname2">run time threshold recommended range: 11~140 min:</label><br>
+    <input type="text" id="lname2" name="lname2" value=120><br><br>
+    <input type="submit" value="Submit">
+  </form> 
+  
+</body>
+</html>

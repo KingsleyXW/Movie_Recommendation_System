@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Home Page</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      font-size: medium;
+      font-family: 'Times New Roman';
+    }
+    </style>
+</head>
+<body>
+    <h1><b>Welcome to Movie-Based Multi-Media Recommendation System </b></h1>
+    <h2><b>The Movies Listed Below of Your First Entry Are Generated According to the Default Settings</b></h2>
+    <h3>You can click <a href="/user_input">here</a> to change the 3 intial parameter to generate new set of movies for further details</h3>
+    <h3>Click to see the rating trending graph <a href="/home/{{param[0]}}/{{param[1]}}/{{param[2]}}">:Rating</a>: </h3>
+    <h3>Click to see the run time trending graph <a href="/home/{{param}}">:Run Time</a>: </h3>
+    <h3>Click to see the popularity trending graph <a href="/home/{{param[0]}}/{{[param[1],param[2]]}}">:Popularity</a>: </h3>
+    <table align="left">
+        <tr>
+            <th><b>Movie ID</b></th>
+            <th><b>Movie Title</b></th>
+            <th><b>Run Time</b></th>
+            <th><b>Release Date</b></th>
+            <th><b>Rating</b></th>
+            <th><b>Popularity</b></th>
+            <th><b>Country</b></th>
+            <th><b>Director</b></th>
+            <th><b>Genre</b></th>
+            <th><b>Poster Link</b></th>
+            <th><b>Plot</b></th>
+        </tr>
+        {% for movie in movielist %}
+        <tr>
+            <td width="150px" align="center">{{movie.id}}</td>
+            <td width="150px" align="center"><a href="/multimedia/{{movie.title}}/{{movie.year}}/{{movie.rating}}/{{movie.runtime}}">{{movie.title}}</td>
+            <td width="150px" align="center">{{movie.runtime}}</td>
+            <td width="150px" align="center">{{movie.year}}</td>
+            <td width="150px" align="center">{{movie.rating}}</td>
+            <td width="150px" align="center">{{movie.popularity}}</td>
+            <td width="150px" align="center">{{movie.country[0]}}</td>
+            <td width="150px" align="center">{{movie.director}}</td>
+            <td width="150px" align="center">{{movie.genre[0]}}</td>
+            <td width="150px" align="center"><a href={{movie.poster}}><li>Poster link</li></a></td>
+            <td width="150px" align="center"><a href="/summary/{{movie.plot}}">Plot link</a></td>
+        </tr>    
+        {% endfor %}
+    </table>
+</body>
+</html>
