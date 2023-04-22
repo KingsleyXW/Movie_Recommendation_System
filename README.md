@@ -20,7 +20,7 @@ There 4 major data sources are used for the project, including 2 major source AP
 
 
 ## Data Structure
-The following code indicates how I retrieve data, preprocess data and storage. Note, during the course of interactive selection. The user better select year within the recommendation range which 2000~2020 to access the existed cache data, Or he might wait over 20 min till the preprcessing finished due to huge amount of data
+The following code indicates how I retrieve data, preprocess data and storage. Note, during the course of interactive selection. The user better select year within the recommendation range which is 2000~2020 to access the existed cache data, Or he might wait over 20 min till the preprcessing finished due to huge amount of data
 
 ```  
 def movie_data_preprocessing(search_term, release_year, rating_threshold, time_length):
